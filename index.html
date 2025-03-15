@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe - Choose Mode</title>
+  <style>
+    /* Basic Styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom right, #FFB6C1, #FFD700);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .mode-button {
+      background-color: #ff6347;
+      color: white;
+      padding: 20px 40px;
+      font-size: 1.5em;
+      margin: 20px 0;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .mode-button:hover {
+      background-color: #ff4500;
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .mode-button:active {
+      background-color: #ff3333;
+      transform: scale(1.05);
+    }
+
+    .description {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .footer {
+      font-size: 0.9em;
+      margin-top: 20px;
+      color: #ddd;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tic-Tac-Toe</h1>
+    <p class="description">Choose your game mode and get ready to play!</p>
+    <button class="mode-button" onclick="startGame('solo')">Solo (Computer vs Player)</button>
+    <button class="mode-button" onclick="startGame('duo')">Duo (Player vs Player)</button>
+    <div class="footer">
+      <p>Designed with ❤️ by <a href="#">Your Name</a></p>
+    </div>
+  </div>
+
+  <script>
+    function startGame(mode) {
+      localStorage.setItem('gameMode', mode);  // Store the chosen mode in localStorage
+      window.location.href = 'game.html';      // Redirect to the game page
+    }
+  </script>
+</body>
+</html>
